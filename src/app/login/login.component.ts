@@ -6,11 +6,12 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ServicesService } from '../shared/services.service';
+
 import { ToastrService } from 'ngx-toastr';
 
 import { Login } from '../models/login';
 import { Router } from '@angular/router';
+import { AuthService } from '../controllers/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -22,9 +23,9 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   constructor(
     private FB: FormBuilder,
-    private serv: ServicesService,
+    private serv: AuthService,
     private toastr: ToastrService,
-    private router : Router
+    private router: Router
   ) {}
 
   userObject!: Login;
@@ -54,10 +55,10 @@ export class LoginComponent implements OnInit {
     this.serv.login(this.loginForm.value).subscribe(
       (res: any) => {
         console.log(res);
-
-        if ((res.Message == 'Welocome in System')) {
+        localStorage.setItem('token', res.Token);
+        if (res.Message == 'Welocome in System') {
           this.toastr.success('success', 'Login Successflluy');
-          this.router.navigateByUrl("home");
+          this.router.navigateByUrl('home');
         } else {
           this.toastr.error('fail', 'Login Faild');
         }

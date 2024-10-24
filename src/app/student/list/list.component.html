@@ -1,0 +1,26 @@
+<div class="container col-md-6 my-5">
+  <div class="card">
+    <div class="card-body">
+      <h1> Create New <button (click)="openCreateDialog()" class="float-end btn btn-primary">Create</button></h1>
+
+      <table class="table border">
+        <tr class="border">
+          <th>ID</th>
+          <th>Name</th>
+          <th>Level</th>
+          <th>Gender</th>
+        </tr>
+
+          @for (item of allData; track item.id) {
+            <tr class="border">
+              <td>{{ item.id }}</td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.level }}</td>
+              <td>{{ item.gander }}</td>
+            </tr>
+          }
+
+      </table>
+    </div>
+  </div>
+</div>

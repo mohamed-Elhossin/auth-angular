@@ -1,0 +1,19 @@
+.card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: var(--text-color);
+}
+
+.card-text {
+  color: var(--text-color-secondary);
+}
+
+ul {
+  color: var(--text-color);
+}
+

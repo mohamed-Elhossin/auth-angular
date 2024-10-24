@@ -1,2 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/ngx-toastr/toastr.css";
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --text-color-secondary: #666666;
+  --navbar-bg: #f8f9fa;
+  --navbar-color: #333333;
+  --card-bg: #ffffff;
+  --table-header-bg: #f1f3f5;
+  --table-row-hover: #e9ecef;
+  --btn-primary-bg: #007bff;
+  --btn-primary-color: #ffffff;
+  --link-color: #0056b3;
+}
+
+[data-theme="dark"] {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --text-color-secondary: #a0a0a0;
+  --navbar-bg: #1e1e1e;
+  --navbar-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --table-header-bg: #2c2c2c;
+  --table-row-hover: #2c2c2c;
+  --btn-primary-bg: #bb86fc;
+  --btn-primary-color: #000000;
+  --link-color: #bb86fc;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--text-color);
+}
